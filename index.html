@@ -1,168 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <!-- ===================== NAV ===================== -->
+    <!-- Contenu peuplé par script.js -->
+    <nav class="navbar">
+      <a href="#" class="logo"></a>
+      <ul class="nav-links"></ul>
+      <a class="btn-nav"></a>
+    </nav>
 
-<body>
+    <!-- ===================== HERO ===================== -->
+    <!-- Contenu peuplé par script.js -->
+    <header id="hero">
+      <h1></h1>
+      <p></p>
+    </header>
 
-  <nav class="navbar">
-    <a class="logo" href="#">Logo</a>
-    <ul class="nav-links">
-      <li><a href="#competences">Mes compétences ↗</a></li>
-      <li><a href="#projets">Mes projets ↗</a></li>
-      <li><a href="#parcours">Mon parcours ↗</a></li>
-    </ul>
-    <a class="btn-nav" href="#contact">Contactez moi ↗</a>
-  </nav>
+    <main>
 
+      <!-- ===================== COMPÉTENCES ===================== -->
+      <!-- Cartes peuplées par script.js -->
+      <section id="competences" class="competences"></section>
 
-  <header id="hero">
-    <h1>
-      Je donne <em>vie</em>
-      <br>
-      à vos idées
-    </h1>
-    <p>Je travail avec vous pour construire vos projet numériques</p>
-  </header>
+      <!-- ===================== PROJETS ===================== -->
+      <!-- Cartes peuplées par script.js -->
+      <section id="projets" class="projets">
+        <h2>Mes projets</h2>
+      </section>
 
+      <!-- ===================== PARCOURS ===================== -->
+      <!-- Items peuplés par script.js -->
+      <section id="parcours" class="parcours">
+        <h2>Mon parcours</h2>
+        <ul class="parcours-liste"></ul>
+      </section>
 
-  <main>
-    <section id="competences" class="competences">
-      <div class="competence-card">
-        <h3>UI/UX design</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, corporis consequuntur. Eaque eligendi delectus
-          molestias alias doloribus deleniti rem saepe natus mollitia! Esse, neque! Dignissimos obcaecati cupiditate
-          quos rem laboriosam?</p>
-        <div class="tags">
-          <span class="tag">UI/UX design</span>
-          <span class="tag">Identité graphique</span>
-          <span class="tag">Prototypage</span>
-          <span class="tag">Design interactif</span>
-        </div>
-      </div>
+    </main>
 
-      <div class="competence-card">
-        <h3>Intégrateur front end</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, corporis consequuntur. Eaque eligendi delectus
-          molestias alias doloribus deleniti rem saepe natus mollitia! Esse, neque! Dignissimos obcaecati cupiditate
-          quos rem laboriosam?</p>
-        <div class="tags">
-          <span class="tag">Javascript</span>
-          <span class="tag">HTML/CSS</span>
-          <span class="tag">Python</span>
-          <span class="tag">Ruby</span>
-        </div>
-    </section>
+    <!-- ===================== FOOTER ===================== -->
+    <!-- Contenu peuplé par script.js (même données que nav) -->
+    <footer class="navbar">
+      <span class="logo"></span>
+      <ul class="nav-links"></ul>
+      <a class="btn-nav"></a>
+    </footer>
 
-    <section id="projets" class="projets">
-      <h2>Mes projets</h2>
-      <article class="projet-card">
-        <div class="projet-content">
-          <div class="projet-top">
-            <h3>Album musique</h3>
-            <div class="tags">
-              <span class="tag">Web design</span>
-              <span class="tag">Developement</span>
-            </div>
-          </div>
-          <div class="projet-bottom">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos qui soluta neque voluptatem ea harum
-              consequuntur quidem, unde vero repudiandae aspernatur magnam obcaecati exercitationem esse sit quis
-              doloremque sunt porro.</p>
-            <a class="btn-projet" href="#">VOIR LE PROJET ↗</a>
-          </div>
-        </div>
-        <div class="projet-image">
-          <img src="assets/project-img.jpeg" alt="album image">
-        </div>
-      </article>
+    <!-- script.js charge data.json et peuple toute la page -->
+    <script src="script.js"></script>
 
-      <article class="projet-card reverse">
-        <div class="projet-image">
-          <img src="assets/project-img.jpeg" alt="album image">
-        </div>
-        <div class="projet-content">
-          <div class="projet-top">
-            <h3>Sneakershop</h3>
-            <div class="tags">
-              <span class="tag">Web design</span>
-              <span class="tag">Developement</span>
-            </div>
-          </div>
-          <div class="projet-bottom">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos qui soluta neque voluptatem ea harum
-              consequuntur quidem, unde vero repudiandae aspernatur magnam obcaecati exercitationem esse sit quis
-              doloremque sunt porro.</p>
-            <a class="btn-projet" href="#">VOIR LE PROJET ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="projet-card">
-        <div class="projet-content">
-          <div class="projet-top">
-            <h3>Site vitrine</h3>
-            <div class="tags">
-              <span class="tag">Web design</span>
-              <span class="tag">Developement</span>
-            </div>
-          </div>
-          <div class="projet-bottom">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos qui soluta neque voluptatem ea harum
-              consequuntur quidem, unde vero repudiandae aspernatur magnam obcaecati exercitationem esse sit quis
-              doloremque sunt porro.</p>
-            <a class="btn-projet" href="#">VOIR LE PROJET ↗</a>
-          </div>
-        </div>
-        <div class="projet-image">
-          <img src="assets/project-img.jpeg" alt="album image">
-        </div>
-      </article>
-    </section>
-
-    <section id="parcours" class="parcours">
-      <h2>Mon parcours</h2>
-      <ul class="parcours-liste">
-        <li>
-          <p class="parcours-titre">"2026 - La Toile emlyon Conception développement et web</p>
-          <p class="parcours-lieu">ENTREPRISES / ÉCOLE</p>
-        </li>
-        <br>
-        <li>
-          <p class="parcours-titre">"2026 - </p>
-          <p class="parcours-lieu">ENTREPRISES / ÉCOLE</p>
-        </li>
-        <br>
-        <li>
-          <p class="parcours-titre">"2026 - </p>
-          <p class="parcours-lieu">ENTREPRISES / ÉCOLE</p>
-        </li>
-        <br>
-        <li>
-          <p class="parcours-titre">"2026 - </p>
-          <p class="parcours-lieu">ENTREPRISES / ÉCOLE</p>
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="navbar">
-    <a class="logo" href="#">Logo</a>
-    <ul class="nav-links">
-      <li><a href="#competences">Mes compétences ↗</a></li>
-      <li><a href="#projets">Mes projets ↗</a></li>
-      <li><a href="#parcours">Mon parcours ↗</a></li>
-    </ul>
-    <a class="btn-nav" href="#contact">Contactez moi ↗</a>
-  </footer>
-</body>
+  </body>
 </html>
