@@ -57,7 +57,7 @@
   ],
 
   "parcours": [
-    { "annee": "2024", "titre": "Bachelor Développement Web",  "lieu": "LaToile / École"       },
+    { "annee": "2026", "titre": "Bachelor Développement Web",  "lieu": "LaToile / École"       },
     { "annee": "2023", "titre": "Intégrateur front end",       "lieu": "Agence Studio / Entreprise" },
     { "annee": "2022", "titre": "BTS Design Graphique",        "lieu": "Lycée Technique / École"    },
     { "annee": "2021", "titre": "Stage UX Design",             "lieu": "StartupXYZ / Entreprise"    }

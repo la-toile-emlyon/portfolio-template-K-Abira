@@ -6,33 +6,33 @@
 // .then() s'exécute automatiquement quand la réponse est prête
 
 fetch('data.json')
-  .then(function(reponse) {
+  .then(function (reponse) {
     return reponse.json(); // convertit la réponse en objet JavaScript
   })
-  .then(function(data) {
+  .then(function (data) {
 
     // À partir d'ici, data contient tout le contenu de data.json
     // ex : data.logo / data.nav / data.hero / data.projets ...
-    
+
 
     // --------------------------------------------------
     //  SÉLECTEURS — les conteneurs dans lesquels on injecte
     // --------------------------------------------------
 
-    const logoNav       = document.querySelector('nav .logo');
-    const liensNav      = document.querySelector('nav .nav-links');
-    const ctaNav        = document.querySelector('nav .btn-nav');
+    const logoNav = document.querySelector('nav .logo');
+    const liensNav = document.querySelector('nav .nav-links');
+    const ctaNav = document.querySelector('nav .btn-nav');
 
-    const heroTitre     = document.querySelector('#hero h1');
+    const heroTitre = document.querySelector('#hero h1');
     const heroSousTitre = document.querySelector('#hero p');
 
     const sectionCompetences = document.querySelector('.competences');
-    const sectionProjets     = document.querySelector('.projets');
-    const listeParcours      = document.querySelector('.parcours-liste');
+    const sectionProjets = document.querySelector('.projets');
+    const listeParcours = document.querySelector('.parcours-liste');
 
-    const logoFooter    = document.querySelector('footer .logo');
-    const liensFooter   = document.querySelector('footer .nav-links');
-    const ctaFooter     = document.querySelector('footer .btn-nav');
+    const logoFooter = document.querySelector('footer .logo');
+    const liensFooter = document.querySelector('footer .nav-links');
+    const ctaFooter = document.querySelector('footer .btn-nav');
 
 
     // --------------------------------------------------
@@ -52,7 +52,7 @@ fetch('data.json')
     };
 
     console.log(genererTags(["HTML", "CSS"]));
-    
+
 
     // Génère les <li><a> à partir du tableau data.nav
     // Exemple : genererLiens(data.nav)
@@ -65,7 +65,7 @@ fetch('data.json')
       return html;
     };
 
-    genererLiens(data.nav)
+    genererLiens(data.nav);
 
 
     // --------------------------------------------------
@@ -73,12 +73,12 @@ fetch('data.json')
     // --------------------------------------------------
 
     // TODO : remplir le logo        → logoNav.textContent = ...
-    logoNav.textContent  = data.logo;
+    logoNav.textContent = data.logo;
     // TODO : injecter les liens     → liensNav.innerHTML  = genererLiens(...)
-    liensNav.innerHTML  = genererLiens(data.nav);
+    liensNav.innerHTML = genererLiens(data.nav);
     // TODO : remplir le bouton CTA  → ctaNav.textContent  = ...
     //                                 ctaNav.href          = ...
-    ctaNav.textContent  = data.cta.label;
+    ctaNav.textContent = data.cta.label;
     ctaNav.href = data.cta.href;
 
 
@@ -108,7 +108,19 @@ fetch('data.json')
     // </div>
     //
     // → sectionCompetences.insertAdjacentHTML('beforeend', carte)
-    
+    let htmlCompetence = '';
+
+    data.competences.forEach(competence => {
+      console.log(competence);
+
+      htmlCompetence = `<div class="competence-card">
+      <h3>${competence.titre}</h3>
+      <p>${competence.description}</p>
+      <div class="tags"> ${genererTags(competence.tags)} </div>
+      </div>`;
+      sectionCompetences.insertAdjacentHTML('beforeend', htmlCompetence);
+    });
+
 
 
     // --------------------------------------------------
@@ -137,6 +149,29 @@ fetch('data.json')
     //
     // → sectionProjets.insertAdjacentHTML('beforeend', carte)
 
+    let htmlProjet = '';
+
+    data.projets.forEach(projet => {
+      console.log(projet);
+
+      htmlProjet = `<article class="projet-card">
+      <div class="projet-content">
+         <div class="projet-top">
+           <h3>${projet.titre}</h3>
+           <div class="tags"> ${genererTags(projet.tags)} </div>
+         </div>
+         <div class="projet-bottom">
+           <p>${projet.description}</p>
+           <a href="${projet.href}" class="btn-projet">VOIR LE PROJET ↗</a>
+         </div>
+       </div>
+       <div class="projet-image">
+         <img src="${projet.image}" alt="${projet.titre}">
+       </div>
+     </article>`;
+      sectionProjets.insertAdjacentHTML('beforeend', htmlProjet);
+    });
+
 
     // --------------------------------------------------
     //  PARCOURS
@@ -151,6 +186,18 @@ fetch('data.json')
     // </li>
     //
     // → listeParcours.insertAdjacentHTML('beforeend', item)
+    let htmlParcours = '';
+
+    data.parcours.forEach(parcours => {
+      console.log(parcours);
+
+      htmlParcours = `<li class="parcours-item">
+      <p class="parcours-titre">${[parcours.annee, parcours.titre]}</p>
+      <p class="parcours-lieu">${parcours.lieu}</p>
+    </li>`;
+    listeParcours.insertAdjacentHTML('beforeend', htmlParcours);
+    });
+  
 
 
     // --------------------------------------------------
@@ -161,5 +208,10 @@ fetch('data.json')
     // TODO : liensFooter.innerHTML   = genererLiens(...)
     // TODO : ctaFooter.textContent   = ...
     //        ctaFooter.href          = ...
-
+    logoFooter.textContent = data.logo;
+    
+    liensFooter.innerHTML = genererLiens(data.nav);
+   
+    ctaFooter.textContent = data.cta.label;
+    ctaFooter.href = data.cta.href;
   });
